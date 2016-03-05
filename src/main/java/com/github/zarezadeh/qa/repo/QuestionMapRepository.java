@@ -4,11 +4,12 @@ import com.github.zarezadeh.qa.model.Question;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 /**
  * @author Meysam Zarezadeh <zarezadeh@gmail.com>
  */
-public class QuestionMapRepository extends QuestionRepository {
+public class QuestionMapRepository implements QuestionRepository {
     private Map<Long, Question> questionMap = new HashMap<>();
 
     @Override
@@ -26,4 +27,9 @@ public class QuestionMapRepository extends QuestionRepository {
     public Question get(long id) {
         return questionMap.get(id);
     }
+
+    protected long randomId() {
+        return Math.abs(new Random().nextInt()) % 1000;
+    }
+
 }
