@@ -3,5 +3,10 @@ apply plugin: 'idea'
 apply plugin: 'application'
 mainClassName = 'com.github.zarezadeh.qa.QAApplication'
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
+    compile 'org.springframework:spring-context:4.0.5.RELEASE'
 } 

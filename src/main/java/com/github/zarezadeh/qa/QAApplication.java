@@ -1,7 +1,7 @@
 package com.github.zarezadeh.qa;
 
-import com.github.zarezadeh.qa.repo.QuestionMapRepository;
-import com.github.zarezadeh.qa.repo.QuestionRepository;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.IOException;
 
@@ -10,9 +10,9 @@ import java.io.IOException;
  */
 public class QAApplication {
     public static void main(String[] args) throws IOException {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        final CommandLineRunner clr = applicationContext.getBean(CommandLineRunner.class);
         System.out.println("Hello World from QA!");
-        QuestionRepository questionRepo = new QuestionMapRepository();
-        final CommandLineRunner clr = new CommandLineRunner(questionRepo);
         clr.run();
     }
 }
