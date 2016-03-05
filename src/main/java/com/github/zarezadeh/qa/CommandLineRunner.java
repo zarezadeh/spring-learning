@@ -1,6 +1,7 @@
 package com.github.zarezadeh.qa;
 
 import com.github.zarezadeh.qa.model.Question;
+import com.github.zarezadeh.qa.repo.QuestionMapRepository;
 import com.github.zarezadeh.qa.repo.QuestionRepository;
 
 import java.io.BufferedReader;
@@ -11,7 +12,7 @@ import java.io.InputStreamReader;
  * @author Meysam Zarezadeh <zarezadeh@gmail.com>
  */
 public class CommandLineRunner {
-    private QuestionRepository questionRepo = new QuestionRepository();
+    private QuestionRepository questionRepo = new QuestionMapRepository();
     private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 

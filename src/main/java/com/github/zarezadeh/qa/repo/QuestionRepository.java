@@ -13,10 +13,14 @@ public class QuestionRepository {
     private List<Question> questions = new ArrayList<>();
 
     public Question add(Question question) {
-        long id = Math.abs(new Random().nextInt()) % 1000;
+        long id = randomId();
         question.setId(id);
         questions.add(question);
         return question;
+    }
+
+    protected long randomId() {
+        return Math.abs(new Random().nextInt()) % 1000;
     }
 
     public Question get(long id) {
