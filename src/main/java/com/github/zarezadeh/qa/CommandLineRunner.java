@@ -18,6 +18,9 @@ public class CommandLineRunner {
     public void run() throws IOException {
         while (true) {
             final String command = reader.readLine();
+            if (command == null) {
+                return;
+            }
             switch (command) {
                 case "add":
                     newQuestion();
