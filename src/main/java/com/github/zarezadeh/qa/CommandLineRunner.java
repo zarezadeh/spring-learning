@@ -1,7 +1,6 @@
 package com.github.zarezadeh.qa;
 
 import com.github.zarezadeh.qa.model.Question;
-import com.github.zarezadeh.qa.repo.QuestionMapRepository;
 import com.github.zarezadeh.qa.repo.QuestionRepository;
 
 import java.io.BufferedReader;
@@ -12,8 +11,12 @@ import java.io.InputStreamReader;
  * @author Meysam Zarezadeh <zarezadeh@gmail.com>
  */
 public class CommandLineRunner {
-    private QuestionRepository questionRepo = new QuestionMapRepository();
+    private QuestionRepository questionRepo;
     private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+    public CommandLineRunner(QuestionRepository questionRepo) {
+        this.questionRepo = questionRepo;
+    }
 
 
     public void run() throws IOException {
